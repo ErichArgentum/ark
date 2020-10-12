@@ -57,7 +57,7 @@ class SendNewTimes extends Command
         });
         $times = collect($dates)->flatten()->filter(function($date){
             if ($date !== null) {
-                if ($date->isBefore(Carbon::now()->addDays(90))) {
+                if ($date->isBefore(Carbon::now()->addDays(35))) {
                     return $date;
                 }
                 
