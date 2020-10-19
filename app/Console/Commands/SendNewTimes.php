@@ -49,7 +49,7 @@ class SendNewTimes extends Command
             if($node->children()->text() === 'Kuressaare') {
                 return $node->children()->each(function ($node) {
                     if ($node->text() !== 'Kuressaare' && $node->text() !== '') {
-                        return "Kuressaare:";
+                        echo("Kuressaare:");
                         return Carbon::parse($node->text());
                     }
                 });
@@ -61,7 +61,7 @@ class SendNewTimes extends Command
             if($node->children()->text() === 'Tallinn') {
                 return $node->children()->each(function ($node) {
                     if ($node->text() !== 'Tallinn' && $node->text() !== '') {
-                        return "Tallinn:";
+                        echo("Tallinn:");
                         return Carbon::parse($node->text());
                     }
                 });
