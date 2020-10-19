@@ -46,26 +46,15 @@ class SendNewTimes extends Command
         $client = new Client();
         $crawler = $client->request('GET', 'https://eteenindus.mnt.ee/public/vabadSoidueksamiajad.xhtml');
         $dates = $crawler->filterXPath('//*[@id="eksami_ajad:kategooriaBEksamiAjad_data"]/tr')->each(function ($node) {
-            if($node->children()->text() === 'Kuressaare') {
+            if($node->children()->text() === 'Kuressaare' . 'Tallinn') {
                 return $node->children()->each(function ($node) {
-                    if ($node->text() !== 'Kuressaare' && $node->text() !== '') {
+                    if ($node->text() !== 'Kuressaare' .'Tallinn' && $node->text() !== '') {
                         return Carbon::parse($node->text());
                     }
                 });
             };
         });
 
-        $client = new Client();
-        $crawler = $client->request('GET', 'https://eteenindus.mnt.ee/public/vabadSoidueksamiajad.xhtml');
-        $dates = $crawler->filterXPath('//*[@id="eksami_ajad:kategooriaBEksamiAjad_data"]/tr')->each(function ($node) {
-            if($node->children()->text() === 'Tallinn') {
-                return $node->children()->each(function ($node) {
-                    if ($node->text() !== 'Tallinn' && $node->text() !== '') {
-                        return Carbon::parse($node->text());
-                    }
-                });
-            };
-        });
 
         $times = collect($dates)->flatten()->filter(function($date){
             if ($date !== null) {
