@@ -48,7 +48,7 @@ class SendNewTimes extends Command
         $dates = $crawler->filterXPath('//*[@id="eksami_ajad:kategooriaBEksamiAjad_data"]/tr')->each(function ($node) {
             if($node->children()->text() === 'Kuressaare' . 'Tallinn') {
                 return $node->children()->each(function ($node) {
-                    if ($node->text() !== 'Kuressaare' .'Tallinn' && $node->text() !== '') {
+                    if ($node->text() !== 'Kuressaare' . 'Tallinn' && $node->text() !== '') {
                         return Carbon::parse($node->text());
                     }
                 });
