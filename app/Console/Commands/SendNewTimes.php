@@ -46,9 +46,9 @@ class SendNewTimes extends Command
         $client = new Client();
         $crawler = $client->request('GET', 'https://eteenindus.mnt.ee/public/vabadSoidueksamiajad.xhtml');
         $dates = $crawler->filterXPath('//*[@id="eksami_ajad:kategooriaBEksamiAjad_data"]/tr')->each(function ($node) {
-            if($node->children()->text() === 'Kuressaare') {
+            if($node->children()->text() === 'Kuressaare' + 'Tallinn' + 'Pärnu' ) {
                 return $node->children()->each(function ($node) {
-                    if ($node->text() !== 'Kuressaare' && $node->text() !== '') {
+                    if ($node->text() !== 'Kuressaare' + 'Tallinn' + 'Pärnu' && $node->text() !== '') {
                  
                         return Carbon::parse($node->text());
                     }
@@ -64,7 +64,7 @@ class SendNewTimes extends Command
             }
         });
         if ($times->isNotEmpty()) {
-        Mail::to('erichhobe@gmail.com')->send(new NewAvailableTimes($times));
+        Mail::to('erkkitamb5@gmail.com')->send(new NewAvailableTimes($times));
         }
 
         return 0;
