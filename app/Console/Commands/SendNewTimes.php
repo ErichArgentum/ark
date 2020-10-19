@@ -78,7 +78,7 @@ class SendNewTimes extends Command
             }
         });
         if ($times->isNotEmpty()) {
-        Mail::to('random@gmail.com')->send(new NewAvailableTimes($times));
+        Mail::to('erkkitamb5@gmail.com')->send(new NewAvailableTimes($times));
         }
 
         return 0;
