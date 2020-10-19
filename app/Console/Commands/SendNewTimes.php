@@ -57,14 +57,14 @@ class SendNewTimes extends Command
         });
         $times = collect($dates)->flatten()->filter(function($date){
             if ($date !== null) {
-                if ($date->isBefore(Carbon::now()->addDays(35))) {
+                if ($date->isBefore(Carbon::now()->addDays(100))) {
                     return $date;
                 }
                 
             }
         });
         if ($times->isNotEmpty()) {
-        Mail::to('asserjarv@gmail.com')->send(new NewAvailableTimes($times));
+        Mail::to('erichhobe@gmail.com')->send(new NewAvailableTimes($times));
         }
 
         return 0;
