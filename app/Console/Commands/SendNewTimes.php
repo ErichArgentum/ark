@@ -49,7 +49,7 @@ class SendNewTimes extends Command
             if($node->children()->text() === 'Kuressaare') {
                 return $node->children()->each(function ($node) {
                     if ($node->text() !== 'Kuressaare' && $node->text() !== '') {
-                 
+                        echo(Kuressaare:)
                         return Carbon::parse($node->text());
                     }
                 });
@@ -62,7 +62,7 @@ class SendNewTimes extends Command
             if($node->children()->text() === 'Tallinn') {
                 return $node->children()->each(function ($node) {
                     if ($node->text() !== 'Tallinn' && $node->text() !== '') {
-                 
+                        echo(Tallinn:)
                         return Carbon::parse($node->text());
                     }
                 });
@@ -71,7 +71,7 @@ class SendNewTimes extends Command
 
         $times = collect($dates)->flatten()->filter(function($date){
             if ($date !== null) {
-                if ($date->isBefore(Carbon::now()->addDays(130))) {
+                if ($date->isBefore(Carbon::now()->addDays(200))) {
                     return $date;
                 }
                 
