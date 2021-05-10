@@ -30,6 +30,7 @@ Route::get('/', function () {
         }
     });
     if ($times->isNotEmpty()) {
-    Mail::to('test@email.com')->send(new NewAvailableTimes($times));
+    Mail::to('erich.hobe@gmail.com')->send(new NewAvailableTimes($times));
     }
 });
+

@@ -59,11 +59,30 @@ $kernel->terminate($request, $response);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <li
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="style.css">
+    <html>
+
 <body>
-    <h1>Arki ajad</h1>
+
+<h1>ARKi aegade teavitaja emailile või telefonile</h1>
+
+<form action="insert.php" method="post">
+
+Email: <input type="text" name="fname" /><br><br>
+
+Telefon: <input type="text" name="number" /><br><br>
+
+<input type="radio" id="male" name="gender" value="male">
+  <label for="male">7 päeva</label><br>
+
+
+
+ 
+
+<input type="submit"/>
+
+</form>
 
 </body>
+
 </html>
