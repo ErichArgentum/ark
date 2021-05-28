@@ -7,6 +7,7 @@ use Goutte\Client;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 
+Route::get('contact', 'ContactFormController@create');
 
 Route::get('/', function () {
     $client = new Client();
@@ -30,6 +31,6 @@ Route::get('/', function () {
         }
     });
     if ($times->isNotEmpty()) {
-    Mail::to('test@email.com')->send(new NewAvailableTimes($times));
+    Mail::to('erich.hobe@mail.com')->send(new NewAvailableTimes($times));
     }
 });

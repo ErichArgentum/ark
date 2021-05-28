@@ -30,6 +30,6 @@ class NewAvailableTimes extends Mailable
      */
     public function build()
     {
-        return $this->from('arkiajad@itmajakas.com')->view('times');
+        return $this->from('moonelon8@gmail.com')->view('times');
     }
 }

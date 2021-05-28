@@ -53,3 +53,58 @@ $response = tap($kernel->handle(
 ))->send();
 
 $kernel->terminate($request, $response);
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARK</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+
+
+<div class="container">
+<form action="insert.php" method="post">
+<div class="form-style-6">
+    <h1>ARK</h1>
+<p>
+<input type="text" name="number" id="number_" placeholder="Telefoni Number" />
+<p>
+<p>
+<input type="email" name="email" id="email" placeholder="Emaili Address" />  
+<p>
+
+<input type="radio" id="day7" name="day" value="day7">
+  <label for="male">7 Päeva</label>
+
+
+<input type="radio" id="day14" name="day" value="day14">
+  <label style="margin" for="male">14 Päeva</label>
+
+
+
+<input type="radio" id="day21" name="day" value="day21">
+  <label for="male">21 Päeva</label>
+  <br>
+
+
+
+  <input type="submit" value="Vajuta Siia!">
+</form> 
+
+
+
+</div>
+
+
+    
+</body>
+</html>
